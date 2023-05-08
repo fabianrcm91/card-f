@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,14 +13,16 @@ import { PrimeNgModule } from './prime-ng/prime-ng.module';
   declarations: [
     AppComponent,
     ModuloTarjetasComponent,
-    ModuloTransaccionesComponent
+    ModuloTransaccionesComponent,
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     PrimeNgModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

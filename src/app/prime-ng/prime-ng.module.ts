@@ -11,6 +11,7 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {ToastModule} from 'primeng/toast';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { TabViewModule } from 'primeng/tabview';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
     CheckboxModule,
     InputTextareaModule,
     ToastModule,
-    InputNumberModule
+    InputNumberModule,
+    TabViewModule
 
   ]
 })

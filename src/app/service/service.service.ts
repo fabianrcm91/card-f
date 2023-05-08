@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TarjetaConsultada } from '../interfaces/tarjeta-interfaces';
+import { CrearTarjeta, DatosTarjeta, TarjetaConsultada } from '../interfaces/tarjeta-interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
 
-  constructor(public http:HttpClient) { }
+  constructor(private http:HttpClient) { }
 
   public consultarTarjeta(pan:number):Observable<TarjetaConsultada>{
     let httpParams=
@@ -19,5 +19,9 @@ export class ServiceService {
     {
     params:httpParams
     });
+  }
+
+  public crearTarjeta(tarjeta:CrearTarjeta):Observable<DatosTarjeta>{
+    return this.http.post<DatosTarjeta>(`http://localhost:8080/api/v1/creartarjeta`,tarjeta);
   }
 }

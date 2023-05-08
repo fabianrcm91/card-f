@@ -1,26 +1,121 @@
-
 <div class="wrapper">
   <h1>Modulo de tarjetas</h1>
-  <div>
-    <div class="container__card">
+
+  <p-tabView styleClass="tabview-custom">
+    <p-tabPanel>
+      <ng-template pTemplate="header">
+        <i class="pi pi-search"></i>
+        <span>Consultar tarjeta</span>
+      </ng-template>
       <div>
-        <h2>Consultar Tarjeta</h2>
+        <div>
+          <div class="container__card">
+            <div>
+              <h2>Consultar Tarjeta</h2>
+            </div>
+            <div style="padding: 20px">
+              <form [formGroup]="form">
+                <label htmlFor="numeroTarjeta">Numero de tarjeta</label>
+                <div style="padding: 8px;">
+                  <p-inputNumber formControlName="numeroTarjeta"></p-inputNumber>
+                </div>
+
+              </form>
+            </div>
+            <div>
+              <p-button
+                label="Consultar Tarjeta"
+                (click)="consultarTarjeta()"
+              ></p-button>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding: 5px">
+          <p>Numero de tarjeta: {{ pan }}</p>
+          <p>Titular: {{ titular }}</p>
+          <p>Cedula: {{ cedula }}</p>
+          <p>Telefono: {{ telefono }}</p>
+          <p>Estado: {{ estado }}</p>
+        </div>
       </div>
-      <div style="padding: 20px;">
-        <form [formGroup]="form">
-          <p-inputNumber  formControlName="numeroTarjeta"></p-inputNumber>
-        </form>
-      </div>
+    </p-tabPanel>
+    <p-tabPanel header="Header II">
+      <ng-template pTemplate="header">
+        <i class="pi pi-user"></i>
+        <span>Crear tarjeta</span>
+      </ng-template>
       <div>
-        <p-button label="Consultar Tarjeta"  (click)="consultarTarjeta()"></p-button>
+        <div>
+          <div class="container__card">
+            <div>
+              <h2>Crear tarjeta</h2>
+            </div>
+            <div class="container__form">
+              <form [formGroup]="formCrear">
+                <label htmlFor="numTarjeta">Numero de tarjeta</label>
+                <div style="padding: 8px">
+                  <p-inputNumber
+                    formControlName="numeroTarjeta"
+                  ></p-inputNumber>
+                </div>
+                <label htmlFor="tipoTarjeta">Tipo de tarjeta</label>
+                <div style="padding: 8px">
+                  <input type="text" pInputText formControlName="tipoTarjeta" />
+                </div>
+                <label htmlFor="titular">Titular</label>
+                <div style="padding: 8px">
+                  <input
+                    type="text"
+                    pInputText
+                    formControlName="titularTarjeta"
+                  />
+                </div>
+                <label htmlFor="cedula">Cedula</label>
+                <div style="padding: 8px">
+                  <p-inputNumber
+                    formControlName="cedulaTitular"
+                  ></p-inputNumber>
+                </div>
+                <label htmlFor="telefono">Telefono</label>
+                <div style="padding: 8px">
+                  <p-inputNumber
+                    formControlName="telefonoTitular"
+                  ></p-inputNumber>
+                </div>
+              </form>
+            </div>
+            <div>
+              <p-button
+                label="Crear Tarjeta"
+                (click)="crearTarjeta()"
+              ></p-button>
+            </div>
+          </div>
+              <div style="padding: 5px">
+              <p>Codigo de respuesta: {{ codResponse }}</p>
+              <p>Numero de validacion: {{ numeroValidacion }}</p>
+              <p>Mensaje: {{ message }}</p>
+              <p>Numero de tarjeta: {{ pan }}</p>
+            </div>
+
+        </div>
       </div>
-
-    </div>
-
-  </div>
-
-  <div>{{tarjetaConsultada}}</div>
-
-
-
+    </p-tabPanel>
+    <p-tabPanel header="Header III">
+      <ng-template pTemplate="header">
+        <i class="pi pi-cog"></i>
+        <span>Enrolar tarjeta</span>
+      </ng-template>
+      <p>
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui
+        blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+        et quas molestias excepturi sint occaecati cupiditate non provident,
+        similique sunt in culpa qui officia deserunt mollitia animi, id est
+        laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
+        distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
+        cumque nihil impedit quo minus.
+      </p>
+    </p-tabPanel>
+  </p-tabView>
 </div>

@@ -18,5 +18,5 @@ export interface DatosTarjeta {
   codRespuesta: string
   pan: string
   message: string
-  numeroValidacion: String
+  numeroValidacion: number
 }
